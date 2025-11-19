@@ -1,0 +1,48 @@
+/* Reset y body */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* negro */
+    overflow: hidden;
+    cursor: default;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Canvas */
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Overlay gigante centrado */
+#overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #ff3d6b; /* rojo/rosado */
+    font-weight: bold;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    user-select: none;
+    text-shadow: 2px 2px 5px #900;
+    cursor: pointer;
+}
+
+/* Efecto de explosión */
+@keyframes explodeAnim {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(2) rotate(180deg); opacity: 0.7; }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+.explode {
+    animation: explodeAnim 0.5s forwards;
+}
